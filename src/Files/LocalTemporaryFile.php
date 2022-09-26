@@ -15,6 +15,7 @@ class LocalTemporaryFile extends TemporaryFile
     public function __construct(string $filePath)
     {
         touch($filePath);
+        chmod($filePath, 0755);
 
         $this->filePath = realpath($filePath);
     }
